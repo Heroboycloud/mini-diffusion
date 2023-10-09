@@ -19,7 +19,8 @@
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.8",
     "replicate": "^0.12.3",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "firebase" : "10.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
