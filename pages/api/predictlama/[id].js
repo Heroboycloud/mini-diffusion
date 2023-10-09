@@ -12,6 +12,6 @@ export default async function handler(req, res) {
     res.end(JSON.stringify({ detail: prediction.error }));
     return;
   }
-  console.log(prediction);
+//  console.log(prediction);
   res.end(JSON.stringify(prediction));
 }

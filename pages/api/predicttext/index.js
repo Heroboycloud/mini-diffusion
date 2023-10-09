@@ -31,6 +31,6 @@ input: {
   }
 
   res.statusCode = 201;
-  console.log(prediction);
+//  console.log(prediction);
   res.end(JSON.stringify(prediction));
 }
