@@ -74,7 +74,7 @@ export default function Home() {
           {prediction.output && (
             <div className="border border-slate-300 hover:border-indigo-300 mt-5">
              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
+        <dt class="text-sm font-medium leading-6 text-gray-900">{prediction.input.prompt}</dt>
         <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
        {prediction.output}
 </dd>
