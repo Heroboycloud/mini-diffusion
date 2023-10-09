@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/predictimage", {
+    const response = await fetch("/api/predictlama", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,8 +30,8 @@ export default function Home() {
       prediction.status !== "succeeded" &&
       prediction.status !== "failed"
     ) {
-      await sleep(1000);
-      const response = await fetch("/api/predictimage/" + prediction.id);
+      await sleep(4000);
+      const response = await fetch("/api/predictlama/" + prediction.id);
       prediction = await response.json();
       if (response.status !== 200) {
         setError(prediction.detail);
@@ -49,9 +49,9 @@ export default function Home() {
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
-        Dream something with{" "}
+        Generate something with{" "}
         <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          SDXL
+          LordLama
         </a>
       </h1>
 
@@ -72,13 +72,13 @@ export default function Home() {
       {prediction && (
         <>
           {prediction.output && (
-            <div className="image-wrapper mt-5">
-              <Image
-                fill
-                src={prediction.output[prediction.output.length - 1]}
-                alt="output"
-                sizes="100vw"
-              />
+            <div className="border border-slate-300 hover:border-indigo-300 mt-5">
+             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+       {prediction.output}
+</dd>
+      </div>
             </div>
           )}
           <p className="py-3 text-sm opacity-50">status: {prediction.status}</p>
