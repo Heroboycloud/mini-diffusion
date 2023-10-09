@@ -9,6 +9,13 @@ export default function RootLayout({ children }) {
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
+<meta
+    property="og:image"
+    content="https://mini-diffusion.vercel.app/api/og"
+  />
+<title>
+Awesome AI || Mini-diffusion by Akindel
+</title>
       <head />
       <body>
         <AuthContextProvider>
