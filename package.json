@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@next/font": "13.4.19",
+    "@vercel/og": "^0.5.17",
     "eslint": "8.49.0",
     "eslint-config-next": "13.0.7",
     "next": "13.4.19",
