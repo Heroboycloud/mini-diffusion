@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     onAuthStateChanged,
+//    currentUser,
     getAuth,
 } from 'firebase/auth';
 import firebase_app from '../firebase/config';
@@ -36,3 +37,4 @@ export const AuthContextProvider = ({
         </AuthContext.Provider>
     );
 };
+

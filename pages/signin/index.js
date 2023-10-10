@@ -1,4 +1,4 @@
-'use client';
+
 import React, { useState } from 'react';
 import signIn from "../firebase/auth/signin";
 import { useRouter } from 'next/navigation';
