@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Quattrocento Sans
+- Font Author: Copyright (c) 2011, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2011, Igino Marini. (www.ikern.com|mail@iginomarini.com), Copyright (c) 2011, Brenda Gallo. (gbrenda1987@gmail.com), with Reserved Font Name Quattrocento Sans.
+- Font Source: http://fonts.gstatic.com/s/quattrocentosans/v18/va9c4lja2NVIDdIAAoMR5MfuElaRB3zOvU7eHGHJ.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

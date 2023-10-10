@@ -7,10 +7,10 @@ const isValidEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
-const validateData = ({ username, email, password }) => {
+const validateData = ({ email, password }) => {
   const errorObj = {};
 
-  if (!username) errorObj.username = "Please provide the username";
+//  if (!username) errorObj.username = "Please provide the username";
 
   if (!email) {
     errorObj.email = "Please provide the email";
@@ -51,18 +51,13 @@ const Form = () => {
     ${formErrors[field] ? "border-pink-500 text-pink-600 focus:border-pink-500 focus:ring-pink-500" : ""}`
   );
   const fieldErrorClasses = (field) => (
-    `mt-2 ${formErrors[field] ? "visible" : "invisible"} text-pink-600 text-sm`
+    `mt-2 ${formErrors[field] ? "visible" : "invisible"} text-red-600 text-sm`
   )
 
   return (
     <>
       <div className='max-w-lg mx-auto p-4 '>
         <form onSubmit={handleSubmit}>
-          <div className='mb-4'>
-            <label htmlFor="username" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">Username</label>
-            <input type="text" name="username" id="username" className={inputClasses("username")} placeholder='username..' onChange={handleChange} />
-            <p className={fieldErrorClasses("username")}>{formErrors.username}</p>
-          </div>
 
           <div className="mb-4">
             <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">Email</label>
@@ -78,7 +73,7 @@ const Form = () => {
 
           <div className="text-right">
             <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
-              Submit
+              Sign up
             </button>
           </div>
         </form>
