@@ -13,6 +13,8 @@ export default function RootLayout({ children }) {
     property="og:image"
     content="https://mini-diffusion.vercel.app/api/og"
   />
+<meta name="description" content="Developed by Akindel, Mini diffusion app" />
+        <link rel="icon" href="/favicon.ico" />
 <title>
 Awesome AI || Mini-diffusion by Akindel
 </title>
