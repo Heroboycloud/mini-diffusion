@@ -5,6 +5,7 @@ import {
     getAuth,
 } from 'firebase/auth';
 import firebase_app from '../firebase/config';
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const auth = getAuth(firebase_app);
 
@@ -20,6 +21,7 @@ export const AuthContextProvider = ({
 
     React.useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
+           await sleep(2000);
             if (user) {
                 setUser(user);
             } else {
