@@ -1,10 +1,10 @@
 'use client';
 import { AuthContextProvider } from './context/AuthContext'
 import Head from "next/head";
-
+import Menu from "./menu";
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
 Awesome AI || Mini-diffusion by Akindel the dev
 </title>
       </Head>
-      <body>
+
         <AuthContextProvider>
-          {children}
+   <Menu />
+{children}
         </AuthContextProvider>
-      </body>
-    </html>
+</>
   )
 }

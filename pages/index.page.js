@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export default function Home() {
@@ -47,7 +46,6 @@ export default function Home() {
       <Head>
         <title>Awesome AI image generator </title>
       </Head>
-
       <h1 className="py-6 text-center font-bold text-2xl">
         Dream something with{" "}
         <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
