@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 <title>
 Awesome AI || Mini-diffusion by Akindel
 </title>
-      <head />
+      </head>
       <body>
         <AuthContextProvider>
           {children}
