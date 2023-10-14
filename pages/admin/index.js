@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 function Page() {
     const { current_user } = useAuthContext()
     const router = useRouter()
-    const [user,setUser] = useState(current_user);
+    const [user,setUser] = useState(null);
     useEffect(() => {
-        if (user == null) setUser("Not Available")
+        if (user == null) setUser("Not Available");
     }, [user])
-    return (<h1>User: {user}Only logged in users can view this page</h1>);
+    return (<h1>User: {current_user}Only logged in users can view this page</h1>);
 }
 
 export default Page;
