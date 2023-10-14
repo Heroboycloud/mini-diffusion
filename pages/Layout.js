@@ -2,6 +2,7 @@
 import { AuthContextProvider } from './context/AuthContext'
 import Head from "next/head";
 import Menu from "./menu";
+import Footer from "./footer";
 export default function RootLayout({ children }) {
   return (
     <>
@@ -28,6 +29,7 @@ Awesome AI || Mini-diffusion by Akindel the dev
    <Menu />
 {children}
         </AuthContextProvider>
+<Footer />
 </>
   )
 }
