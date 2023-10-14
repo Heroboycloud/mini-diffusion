@@ -20,8 +20,7 @@ export const AuthContextProvider = ({
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-           await sleep(2000);
+        const unsubscribe =  onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             } else {
