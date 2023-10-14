@@ -1,5 +1,4 @@
-'use client'
-import '../styles/globals.css';
+'use client';
 import { AuthContextProvider } from './context/AuthContext'
 import Head from "next/head";
 
