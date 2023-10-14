@@ -60,7 +60,7 @@ const handlePasswordChange = e => {
 
         // else successful
         console.log(result)
-        return router.push("/admin")
+        return router.push("/dashboard")
     }
   const handleSubmit = e => {
     e.preventDefault();
