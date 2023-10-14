@@ -1,6 +1,7 @@
 'use client'
 import './globals.css'
 import { AuthContextProvider } from '../context/AuthContext'
+import Head from "next/head";
 
 export default function RootLayout({ children }) {
   return (
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-<head>
+<Head>
 <meta
     property="og:image"
     content="https://mini-diffusion.vercel.app/api/og"
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
 <title>
 Awesome AI || Mini-diffusion by Akindel the dev
 </title>
-      </head>
+      </Head>
       <body>
         <AuthContextProvider>
           {children}
