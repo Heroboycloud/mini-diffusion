@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Loader from "./loaders";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export default function Home() {
@@ -56,11 +57,11 @@ export default function Home() {
       <form className="w-full flex" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="flex-grow"
+          className="flex-grow h-full w-full bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-teal-100 hover:bg-white-300"
           name="prompt"
-          placeholder="Enter a prompt to display an image"
+          placeholder="Enter a prompt"
         />
-        <button className="button" type="submit">
+        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">
           Go!
         </button>
       </form>
@@ -69,16 +70,18 @@ export default function Home() {
 
       {prediction && (
         <>
+          { prediction.status !== "succeeded" ? (<Loader />) : "" }
           {prediction.output && (
             <div className="image-wrapper mt-5">
               <Image
                 fill
                 src={prediction.output[prediction.output.length - 1]}
-                alt="output"
+                alt="image_output"
                 sizes="100vw"
               />
             </div>
           )}
+
           <p className="py-3 text-sm opacity-50">status: {prediction.status}</p>
         </>
       )}

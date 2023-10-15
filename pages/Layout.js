@@ -28,9 +28,9 @@ export default function RootLayout({ children }) {
 Awesome AI || Mini-diffusion by Akindel the dev
 </title>
       </Head>
+<Logo />
 
         <AuthContextProvider>
-<Logo />
    <Menu />
 {children}
         </AuthContextProvider>
