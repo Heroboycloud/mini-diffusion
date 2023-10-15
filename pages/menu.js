@@ -35,7 +35,7 @@ const Menu = () => {
  <div className='flex flex-row bg-white text-gray-700 shadow-sm'>
         <div className='relative bg-white h-full'>
           <button className='h-full px-4 py-3 hover:text-blue-500 cursor-pointer' onClick={() => setActiveMenu(!activeMenu)}>
-            <span>All Subjects</span>
+            <span>Menu</span>
             <span className='ml-2'><i className="fa-solid fa-angle-down"></i></span>
           </button>
 

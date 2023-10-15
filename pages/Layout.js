@@ -4,6 +4,10 @@ import Head from "next/head";
 import Menu from "./menu";
 import Logo from "./logo";
 import Footer from "./footer";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({ children }) {
   return (
     <>
@@ -16,6 +20,7 @@ export default function RootLayout({ children }) {
     property="og:image"
     content="https://mini-diffusion.vercel.app/api/og"
   />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Developed by Akindel, Mini diffusion app" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -32,6 +37,7 @@ Awesome AI || Mini-diffusion by Akindel the dev
 
         <AuthContextProvider>
    <Menu />
+<br />
 {children}
         </AuthContextProvider>
 <Footer />

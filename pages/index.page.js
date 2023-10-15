@@ -7,9 +7,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export default function Home() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
+  const [prompt,setPrompt]= useState("");
+  const [isGenerating,setIsGenerating]= useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsGenerating(true)
     const response = await fetch("/api/predictimage", {
       method: "POST",
       headers: {
@@ -39,6 +42,7 @@ export default function Home() {
       }
       console.log({ prediction });
       setPrediction(prediction);
+      setIsGenerating(false);
     }
   };
 
@@ -47,23 +51,35 @@ export default function Home() {
       <Head>
         <title>Awesome AI image generator </title>
       </Head>
-      <h1 className="py-6 text-center font-bold text-2xl">
-        Dream something with{" "}
-        <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          SDXL
-        </a>
-      </h1>
-
-      <form className="w-full flex" onSubmit={handleSubmit}>
+      <p className="mt-3 text-2xl">
+            Create Beautiful
+            <span className="text-2xl font-bold text-blue-600">
+              {" "}
+              AI Images{" "}
+            </span>
+            in Seconds
+          </p>
+      <form className="" onSubmit={handleSubmit}>
         <input
           type="text"
           className="flex-grow h-full w-full bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-teal-100 hover:bg-white-300"
           name="prompt"
           placeholder="Enter a prompt"
+          onChange={(e) => setPrompt(e.target.value)}
+          value={prompt}
         />
-        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">
-          Go!
-        </button>
+        <button
+  className={`bg-blue-600 w-full hover:bg-blue-700 text-white font-bold mt-6 py-2 px-4 rounded
+                ${
+                  isGenerating || prompt === ""
+                    ? "cursor-not-allowed opacity-50"
+                    : ""
+                }`}
+  type="submit"
+  disabled={isGenerating || prompt === ""}
+>
+  {isGenerating ? "Generating..." : "Generate"}
+</button>
       </form>
 
       {error && <div>{error}</div>}
