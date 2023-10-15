@@ -1,74 +1,49 @@
-import React from "react";
+import Link from "next/link";
 
-// UI Reference: https://tailwindui.com/components/marketing/sections/footers
-const data = [
-  { title: "Solutions", list: ["Marketing", "Analytics", "Commerce", "Insights"] },
-  { title: "Support", list: ["Pricing", "Documentation", "Guides", "API Status"] },
-  { title: "Company", list: ["About", "Blog", "Jobs", "Press", "Partners"] },
-  { title: "Legal", list: ["Claim", "Privacy", "Terms of Use"] },
-];
-
-const Footer = ({ theme = "dark" }) => {
+export default function Footer() {
   return (
-    <>
-      <div
-        className={`w-screen px-4 pt-8 md:pt-28 text-xs sm:text-sm
-      ${theme === "dark" ? "bg-gray-900 text-gray-400" : "bg-gray-100 text-gray-600"}
-      `}
-      >
-        <div className="flex flex-col md:flex-row gap-8 sm:gap-20 ml-6 mr-12">
-          <div className="self-center">
-            <div className="mb-2 md:mb-6">
-              Making the world a better place through constructing elegant hierachies.
-            </div>
-
-            <div className="flex gap-4 text-sm sm:text-lg">
-              <span>
-                <i className="fa-brands fa-facebook"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-twitter"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-github"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-youtube"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-instagram"></i>
-              </span>
-            </div>
-          </div>
-
-          <div className="mx-auto flex flex-row gap-6 md:gap-12 flex-wrap sm:flex-nowrap">
-            {data.map(({ title, list }, idx) => (
-              <div key={idx}>
-                <h5
-                  className={`font-semibold mb-2 sm:mb-8
-                  ${theme === "dark" ? "text-gray-300" : "text-gray-900"} `}
-                >
-                  {title}
-                </h5>
-                <ul className="flex flex-col gap-3 sm:gap-5">
-                  {list.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className={`mt-8 sm:mt-16 border-t py-7 text-gray-500 text-xs
-          ${theme === "dark" ? "border-t-gray-800" : "border-t-gray-300"} `}
-        >
-          &copy; 2020 Your Company, Inc. All rights reserved
-        </div>
+    <footer className="w-full bg-white p-8">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+        <img src="/favicon.ico" alt="logo-ct" className="w-10" />
+        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+          <li>
+            <Link
+              href="/about"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              License
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              Contribute
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              Contact Us
+            </Link>
+          </li>
+        </ul>
       </div>
-    </>
+      <hr className="my-8 border-blue-gray-50" />
+      <Link href="/" className="text-center font-normal">
+        &copy; 2023 Mini-diffusion
+      </Link>
+    </footer>
   );
-};
-
-export default Footer;
+}
