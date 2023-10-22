@@ -41,8 +41,11 @@ export default function Footer() {
         </ul>
       </div>
       <hr className="my-8 border-blue-gray-50" />
-      <Link href="/" className="text-center font-normal">
-        &copy; 2023 Mini-diffusion
+     Developed by {" "} <a href="http://github.com/Heroboycloud">
+Akindel</a><br/>
+      &copy; 2023{" "}
+<Link href="/" className="text-center font-normal">
+       Mini-diffusion
       </Link>
     </footer>
   );

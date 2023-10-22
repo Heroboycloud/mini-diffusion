@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: [ 'page.js'],
+  poweredByHeader: false, 
+  pageExtensions: [ 'page.js'], // for extensions to be rendered on page routing
+  async rewrites(){
+  return [
+      {
+        source: '/home',
+        destination: '/',
+      },
+    ]
+
+},
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -19,5 +29,6 @@ const nextConfig = {
     ],
   },
 };
+
 
 module.exports = nextConfig;
