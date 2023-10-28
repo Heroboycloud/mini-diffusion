@@ -13,7 +13,7 @@ const initAuth = () => {
       console.error(err)
     },
     // Use application default credentials (takes precedence over firebaseAdminInitConfig if set)
-    // useFirebaseAdminDefaultCredential: true,
+     useFirebaseAdminDefaultCredential: true,
     firebaseClientInitConfig: {
       apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY, // required
       authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ,
