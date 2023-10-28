@@ -9,10 +9,12 @@ export default function Home() {
   const [error, setError] = useState(null);
   const [prompt,setPrompt]= useState("");
   const [isGenerating,setIsGenerating]= useState(false);
+  const [clientError,setClientError]= useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsGenerating(true)
+try{
     const response = await fetch("/api/predictimage", {
       method: "POST",
       headers: {
@@ -22,6 +24,7 @@ export default function Home() {
         prompt: e.target.prompt.value,
       }),
     });
+
     let prediction = await response.json();
     if (response.status !== 201) {
       setError(prediction.detail);
@@ -44,7 +47,11 @@ export default function Home() {
       setPrediction(prediction);
       setIsGenerating(false);
     }
-  };
+}catch(err){
+ setClientError(true);
+} 
+
+ };
 
   return (
     <div className="container max-w-2xl mx-auto p-5">
@@ -83,7 +90,7 @@ export default function Home() {
       </form>
 
       {error && <div>{error}</div>}
-
+      {clientError && <span class="text-red-500  text-slate-100"> Failed to Connect </span>}
       {prediction && (
         <>
           { prediction.status !== "succeeded" ? (<Loader />) : "" }
