@@ -13,26 +13,17 @@ const initAuth = () => {
       console.error(err)
     },
     firebaseAuthEmulatorHost: 'localhost:9099',
-    firebaseAdminInitConfig: {
-      credential: {
-        projectId: 'my-example-app-id',
-        clientEmail: 'example-abc123@my-example-app.iam.gserviceaccount.com',
-        // The private key must not be accessible on the client side.
-        privateKey: process.env.FIREBASE_PRIVATE_KEY,
-      },
-      databaseURL: 'https://my-example-app.firebaseio.com',
-    },
     // Use application default credentials (takes precedence over firebaseAdminInitConfig if set)
     // useFirebaseAdminDefaultCredential: true,
     firebaseClientInitConfig: {
-      apiKey: 'MyExampleAppAPIKey123', // required
-      authDomain: 'my-example-app.firebaseapp.com',
-      databaseURL: 'https://my-example-app.firebaseio.com',
-      projectId: 'my-example-app-id',
+      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY, // required
+      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ,
+      databaseURL: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
     },
-    // tenantId: 'example-tenant-id', // Optional, only necessary in multi-tenant configuration
+
     cookies: {
-      name: 'ExampleApp', // required
+      name: 'mini-diffusion', // required
       // Keys are required unless you set `signed` to `false`.
       // The keys cannot be accessible on the client side.
       keys: [
