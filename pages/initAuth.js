@@ -12,7 +12,6 @@ const initAuth = () => {
     onLogoutRequestError: (err) => {
       console.error(err)
     },
-    firebaseAuthEmulatorHost: 'localhost:9099',
     // Use application default credentials (takes precedence over firebaseAdminInitConfig if set)
     // useFirebaseAdminDefaultCredential: true,
     firebaseClientInitConfig: {
