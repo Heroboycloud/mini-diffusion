@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-
 export const getServerSideProps= async () =>{
 const res = await fetch('http://localhost:3000/jokes.json')
   const jokes = await res.json()
@@ -12,6 +11,10 @@ export default function Page({ jokes }) {
 const router= useRouter();
 const nextBtn=`/learn/jokes/${Number(router.query.id) + 1}`;
 const prevBtn=`/learn/jokes/${router.query.id - 1}`;
+
+if(jokes[router.query.id] == undefined) {
+router.push('learn/jokes/1')
+}
 return (
 <div>
 <h4 style={{ color: 'blue' }}>
