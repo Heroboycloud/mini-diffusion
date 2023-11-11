@@ -5,9 +5,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
-  { name: 'Tools', href: '/tools/lama', current: false },
+  { name: 'Tools', href: '/tools', current: false },
   { name: 'Learn', href: '/learn', current: false },
-  { name: 'signin', href: '/login', current: false },
+  { name: 'Signin', href: '/signin', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,7 +16,7 @@ function classNames(...classes) {
 
 export default function BigMenu() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white-500">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@ export default function BigMenu() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.current ? 'text-white-400 bg-blue-500' : 'text-blue-300 hover:text-white hover:bg-green-400',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -102,6 +102,9 @@ export default function BigMenu() {
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
+<span className="inline-flex items-center rounded-md bg-red-500 px-2 py-1 text-xs font-medium text-white-700 ring-1 ring-inset ring-pink-700/10">
+        Badge
+      </span>
                           </Link>
                         )}
                       </Menu.Item>
@@ -112,6 +115,9 @@ export default function BigMenu() {
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Settings
+			<span className="inline-flex items-center rounded-md bg-purple-500 px-2 py-1 text-xs font-medium text-white-700 ring-1 ring-inset ring-purple-500">
+        New
+      </span>
                           </Link>
                         )}
                       </Menu.Item>
@@ -137,10 +143,10 @@ export default function BigMenu() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
+                  as="Link"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-blue-600 text-white' : 'text-black-300 hover:bg-blue-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
