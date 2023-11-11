@@ -1,7 +1,7 @@
 'use client';
 import { AuthContextProvider } from './context/AuthContext'
 import Head from "next/head";
-import Menu from "./menu";
+import BigMenu from "./menu";
 import Logo from "./logo";
 import Footer from "./footer";
 import { Inter } from "@next/font/google";
@@ -36,7 +36,7 @@ Awesome AI || Mini-diffusion by Akindel the dev
 <Logo />
 
         <AuthContextProvider>
-   <Menu />
+   <BigMenu />
 <br />
 {children}
         </AuthContextProvider>
