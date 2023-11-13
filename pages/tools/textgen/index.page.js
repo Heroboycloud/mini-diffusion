@@ -49,7 +49,7 @@ export default function Home() {
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
-        Generate something with{" "}
+        Ask any question from {" "}
         <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
           LordLama
         </a>
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="border border-slate-300 hover:border-indigo-300 mt-5 overflow-auto">
              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">{prediction.input.prompt}</dt>
-        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 overflow-auto">
        {prediction.output}
 </dd>
       </div>

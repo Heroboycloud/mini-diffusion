@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className="container max-w-2xl mx-auto p-5">
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>LordLama Ask bot</title>
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="border border-slate-300 hover:border-indigo-300 mt-5">
              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">{prediction.input.prompt}</dt>
-        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+        <dd class="mt-1 text-sm overflow-auto leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
        {prediction.output}
 </dd>
       </div>
