@@ -6,7 +6,7 @@ export default function Home(){
   const { push } = useRouter();
 
   useEffect(() => {
-     push('/learn/jokes/1');
+     push('/fun/jokes/1');
   }, []);
-  return <p></p>;
+  return <p>Redirecting to jokes...</p>;
 };

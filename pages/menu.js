@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Dashboard', href: '/', current: false },
   { name: 'Tools', href: '/tools', current: false },
   { name: 'Learn', href: '/learn', current: false },
   { name: 'Signin', href: '/signin', current: false },
@@ -143,7 +143,7 @@ export default function BigMenu() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="Link"
+                  as="a"
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-blue-600 text-white' : 'text-black-300 hover:bg-blue-700 hover:text-white',
