@@ -6,9 +6,9 @@ import { useRouter } from 'next/router';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { auth, firebase_app } from './config/firebaseApp.config.js';
+import { auth, firebase } from './config/firebaseApp';
 
-import { uiConfig } from './config/firebaseAuthUi.config.js';
+import { uiConfig } from './config/firebaseAuthConfig';
 
 /* Components
 import Logo from '../components/elements/Logo';
@@ -24,7 +24,7 @@ export default function Login() {
     const [user, loading, error] = useAuthState(auth);
     const router = useRouter();
 
-    if (loading) return "Loading.."
+    if (loading) return "Loading. "
     else if (error) return "error.."
 
     else if (user) {
@@ -32,7 +32,7 @@ export default function Login() {
         router.push('/');
     }
 
-    const authConfig = uiConfig(firebase_app);
+    const authConfig = uiConfig(firebase);
 
     return (
         <>
