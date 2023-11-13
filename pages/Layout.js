@@ -1,5 +1,4 @@
 'use client';
-import { AuthContextProvider } from './context/AuthContext'
 import Head from "next/head";
 import BigMenu from "./menu";
 import Logo from "./logo";
@@ -35,11 +34,9 @@ Awesome AI || Mini-diffusion by Akindel the dev
       </Head>
 <Logo />
 
-        <AuthContextProvider>
    <BigMenu />
 <br />
 {children}
-        </AuthContextProvider>
 <Footer />
 </>
   )
