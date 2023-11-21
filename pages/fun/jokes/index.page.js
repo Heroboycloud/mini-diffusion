@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Home(){
-  const { push } = useRouter();
+const router = useRouter();
 
   useEffect(() => {
-     push('/fun/jokes/1');
+     router.push('/fun/jokes/1');
   }, []);
   return <p>Redirecting to jokes...</p>;
 };
