@@ -3,9 +3,9 @@ import Head from "next/head";
 import BigMenu from "./menu";
 import Logo from "./logo";
 import Footer from "./footer";
-import { Inter } from "@next/font/google";
+//import { Inter } from "@next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
