@@ -42,7 +42,7 @@ export default function Example() {
                   />
                 </div>
                 <h3 className="mt-6 text-sm text-gray-500">
-                  <Link href={callout.href} prefetch>
+                  <Link href={callout.href} >
                     <span className="absolute inset-0" />
                     {callout.name}
                   </Link>
