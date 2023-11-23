@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {useEffect} from 'react';
 
 export const getServerSideProps= async () =>{
-const res = await fetch('/jokes.json')
+const res = await fetch('https://mini-diffusion.vercel.app/jokes.json')
   const jokes = await res.json()
   return { props: { jokes } }
 
