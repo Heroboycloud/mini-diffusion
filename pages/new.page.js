@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { PhotoIcon } from '@heroicons/react/24/solid'
+
 
 /**
  *
@@ -95,7 +97,7 @@ if (response.status !== 201) {
       <div className="h-[70%]" onDragEnter={onDragEnter} onDragLeave={onDragLeave} onDrop={onDrop}>
         <label
           htmlFor={id}
-          className={`h-full relative border-2 border-gray-400 w-64 p-4 rounded-md border-dashed flex justify-center items-center flex-col cursor-pointer bg-gray-50 hover:bg-gray-100 transition select-none ${
+          className={`h-full relative border focus-within:ring-indigo-600 w-64 p-4 rounded-md border-dashed border-gray-900/25 flex justify-center items-center flex-col cursor-pointer bg-gray-50 hover:bg-gray-100 transition select-none ${
             dragover && "opacity-70"
           }`}
         >
@@ -106,25 +108,25 @@ if (response.status !== 201) {
             className="absolute opacity-0 top-0 left-0 w-full h-full cursor-pointer"
             onChange={handleInputFileChange}
           />
-          <span className="text-gray-500 text-2xl block">
-            <i className="fa-solid fa-arrow-up-from-bracket"></i>
-          </span>
+          <div className="text-gray-500 text-center text-2xl block">
+           <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
+          </div>
           <span className="text-gray-500 hover:text-gray-700 transition font-medium">
-            Drop images here, or
-            <span className="text-blue-500 font-semibold"> browse</span>
+            Drop images(JPG,PNG,GIF ) here, or
+            <span className="text-blue-500 font-semibold"> Upload </span>
           </span>
         </label>
       </div>
 
        <div className="sm:col-span-2">
-              <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                ZIP / Postal code
+              <label htmlFor="prompt" className="block text-sm font-medium leading-6 text-gray-900">
+               What to Ask About Image
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                  name="postal-code"
-                  id="postal-code"
+                  name="prompt"
+                  id="prompt"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div></div>
