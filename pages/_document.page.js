@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" type="text/css" />
+<link href="http://az.co/az.css" rel="stylesheet" />
       </Head>
       <body>
         <Main />
