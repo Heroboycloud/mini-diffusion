@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     );
   }
 
+console.log(req.body);
 
   const prediction = await replicate.predictions.create({
     // Pinned to a specific version of Stable Diffusion

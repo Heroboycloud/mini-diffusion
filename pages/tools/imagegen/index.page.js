@@ -90,7 +90,7 @@ try{
       </form>
 
       {error && <div>{error}</div>}
-      {clientError && <span class="text-red-500  text-slate-100"> Failed to Connect </span>}
+      {clientError && <span class="text-red-500 text-light"> Failed to Connect </span>}
       {prediction && (
         <>
           { prediction.status !== "succeeded" ? (<Loader />) : "" }
