@@ -9,12 +9,19 @@ const Upload = () => {
   const [base64, setBase64] = useState(null)
 
   // When the file is selected, set the file state
-  const onFileChange = e => {
+  const onFileChange =async e => {
     if (!e.target.files) {
       return
     }
 
     setFile(e.target.files[0])
+// set files to image
+if (!file) {
+      return
+    }
+
+const base64 = await toBase64(file)
+setBase64(base64);
   }
 
   // On click, clear the input value
@@ -26,17 +33,10 @@ const Upload = () => {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    if (!file) {
-      return
-    }
 
-    // Convert the file to base64
-    const base64 = await toBase64(file)
-
-    setBase64(base64)
 
     // You can upload the base64 to your server here
-    await fetch("/api/your-upload-endpoint", {
+    await fetch("/api/imgtotext", {
       method: "POST",
       body: JSON.stringify({ base64 }),
       headers: {
