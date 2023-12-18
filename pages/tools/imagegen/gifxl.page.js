@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
     setIsGenerating(true)
 try{
-    const response = await fetch("/api/predictimage/sdxl", {
+    const response = await fetch("/api/predictimage/gifxl", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,19 +67,14 @@ try{
             in Seconds
           </p>
       <form className="" onSubmit={handleSubmit}>
-	<label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
-                Prompt:
-              </label>
-
-                <textarea
-                  id="prompt"
-                  name="prompt"
-                  rows={3}
-		  onChange={(e) => setPrompt(e.target.value)}
-		  placeholder="Enter a prompt"
-                  className="text-white bg-black block w-full rounded-md border-1 py-1.5  shadow-lg shadow ring-1 ring-inset ring-gray-300 placeholder:text-blue-400 focus:ring-2 focus:ring-inset focus:ring-white-100 "
-                  defaultValue={prompt}
-                />
+        <input
+          type="text"
+          className="flex-grow h-full w-full bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-teal-100 hover:bg-white-300"
+          name="prompt"
+          placeholder="Enter a prompt"
+          onChange={(e) => setPrompt(e.target.value)}
+          value={prompt}
+        />
         <button
   className={`bg-blue-600 w-full hover:bg-blue-700 text-white font-bold mt-6 py-2 px-4 rounded
                 ${

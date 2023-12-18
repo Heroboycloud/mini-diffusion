@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
+//import Image from "next/image";
 import Loader from "./loaders";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
     setIsGenerating(true)
 try{
-    const response = await fetch("/api/predictimage/sdxl", {
+    const response = await fetch("/api/predictimage/animatediff", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,11 +101,10 @@ try{
           { prediction.status !== "succeeded" ? (<Loader />) : "" }
           {prediction.output && (
             <div className="image-wrapper mt-5">
-              <Image
-                fill
+              <video
+                autoplay
                 src={prediction.output[prediction.output.length - 1]}
                 alt="image_output"
-                sizes="100vw"
               />
             </div>
           )}
