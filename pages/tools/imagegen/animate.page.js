@@ -56,13 +56,13 @@ try{
   return (
     <div className="container max-w-2xl mx-auto p-5">
       <Head>
-        <title>Awesome AI image generator </title>
+        <title>Awesome AI Animation generator </title>
       </Head>
       <p className="mt-3 text-2xl">
             Create Beautiful
             <span className="text-2xl font-bold text-blue-600">
               {" "}
-              AI Images{" "}
+              AI animations{" "}
             </span>
             in Seconds
           </p>
@@ -77,7 +77,7 @@ try{
                   rows={3}
 		  onChange={(e) => setPrompt(e.target.value)}
 		  placeholder="Enter a prompt"
-                  className="text-white bg-black block w-full rounded-md border-1 py-1.5  shadow-lg shadow ring-1 ring-inset ring-gray-300 placeholder:text-blue-400 focus:ring-2 focus:ring-inset focus:ring-white-100 "
+                  className="bg-opacity-5 bg-slate-300 block w-full rounded-md border-1 py-1.5  shadow-lg shadow ring-1 ring-inset ring-gray-300 placeholder:text-blue-400 focus:ring-2 focus:ring-inset focus:ring-white-100 "
                   defaultValue={prompt}
                 />
         <button
