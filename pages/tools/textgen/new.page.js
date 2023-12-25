@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/predictlama/lama2", {
+    const response = await fetch("/api/predicttext/lama13b", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,13 +45,13 @@ export default function Home() {
   return (
     <div className="container max-w-2xl mx-auto p-5">
       <Head>
-        <title>Lama2B ask question</title>
+        <title>Lama13B ask question</title>
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
         Ask any question from {" "}
         <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          Lama2B
+          Lama13B
         </a>
       </h1>
 

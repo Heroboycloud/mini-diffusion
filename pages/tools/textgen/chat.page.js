@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/predicttext", {
+    const response = await fetch("/api/predicttext/lama", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function Home() {
       prediction.status !== "failed"
     ) {
       await sleep(4000);
-      const response = await fetch("/api/predicttext/" + prediction.id);
+      const response = await fetch("/api/predictlama/" + prediction.id);
       prediction = await response.json();
       if (response.status !== 200) {
         setError(prediction.detail);
@@ -45,13 +45,13 @@ export default function Home() {
   return (
     <div className="container max-w-2xl mx-auto p-5">
       <Head>
-        <title>LordLama Ask bot</title>
+        <title>Lama ask question</title>
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
-        Generate something with{" "}
+        Ask any question from {" "}
         <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          LordLama
+          Lama Model
         </a>
       </h1>
 
@@ -60,10 +60,10 @@ export default function Home() {
           type="text"
           className="flex-grow"
           name="prompt"
-          placeholder="Enter a prompt to display an image"
+          placeholder="Ask your Question"
         />
         <button className="button" type="submit">
-          Go!
+          Ask!
         </button>
       </form>
 
@@ -72,12 +72,12 @@ export default function Home() {
       {prediction && (
         <>
           {prediction.output && (
-            <div className="border border-slate-300 hover:border-indigo-300 mt-5">
+            <div className="border border-slate-300 hover:border-indigo-300 mt-5 overflow-auto">
              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt class="text-sm font-medium leading-6 text-gray-900">{prediction.input.prompt}</dt>
-        <dd class="mt-1 text-sm overflow-auto leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+        <p class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 overflow-auto">
        {prediction.output}
-</dd>
+</p>
       </div>
             </div>
           )}
